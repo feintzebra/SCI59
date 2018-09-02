@@ -4,26 +4,30 @@ This guide is a quickstart tutorial. Most technical setup will depend on the min
 
 Mining instructions
 ---
-Please note that the following instructions apply to the Ropsten testnet version **only**.
+Please note that the following instructions apply to the **Ropsten testnet version only**.
 
 SCI59 Token details:
 
-- Contract address: **0xacbaf9715d3d92e2baee463c2189ed8df9ae6a36**
-- Total supply: 21.000.000 tokens
-- Decimals: 8 Decimals
+- Contract address:   **0xacbaf9715d3d92e2baee463c2189ed8df9ae6a36**
+- Total supply:       21.000.000 tokens
+- Decimals:           8 Decimals
 
 Contract address: https://ropsten.etherscan.io/address/0xacbaf9715d3d92e2baee463c2189ed8df9ae6a36
+
 Token tracker: https://ropsten.etherscan.io/token/0xacbaf9715d3d92e2baee463c2189ed8df9ae6a36
 
 ### Step 1: Prepare your Ropsten testnet account
-
--   In order to get started, go to [**MyEtherWallet**](https://www.myetherwallet.com) (MEW) and create an account there.
--   To get setup, click the right hand side corner, **change the network** to Ropsten ([MyEtherWallet](https://www.myetherwallet.com)) → click the New Wallet →Enter a password you can remember → Download / Save your Keystore file in a safe space → Save your Private Key in a safe space.
--   To view your wallet address, go to →View Wallet Info →Private Key → Enter the saved private key →Unlock your Wallet and it should be there!
-- Go to https://faucet.ropsten.be/, enter your wallet address, and the faucet will send a small amount of Ethereum to your account.
+- Go to [**MyEtherWallet**](https://www.myetherwallet.com) (MEW).
+- In the top right hand corner select **Ropsten (myetherwallet.com)** (a green bar at the bottom will appear telling you you have succesfully connected).
+- If not already there, click **New Wallet**
+- Enter a password you can remember and click 'Create New Wallet'
+- Download & save your Keystore file in a safe space and click 'I Understand. Continue'
+- Save your Private Key in a safe space.
+- Get your wallet address by clicking on 'View Wallet Info'
+- Select 'Private Key' and then enter the private key previously saved then click 'unlock'.
+- Go to **https://faucet.ropsten.be/**, enter your wallet address, click 'Send me test Ether' and the faucet will send a small amount of Ethereum to your account.
 
 ### Step 2: Download 0xbtc mining software
-
 It's important to use mining software that supports solo mining for the testnet version. While great performance improvements have been made to the 0xbtc mining software, most latest versions have excluded solo mining due to high difficulty. 
 
 Suggested mining software:
@@ -32,9 +36,9 @@ Suggested mining software:
  - COSMiC v3.4 (nVidia/CUDA): [https://bitbucket.org/LieutenantTofu/cosmic-v3/](https://bitbucket.org/LieutenantTofu/cosmic-v3/)
 - Original 0xbitcoin miner (CPU) https://github.com/0xbitcoin/0xbitcoin-gpuminer/tree/master/dist/windows
 
-Carefully read and follow the installation instructions on the software page in order to get started.
+**Carefully read and follow the installation instructions for the  software you have chosen to get started.**
 
-### Configure the mining software
+### Step 3: Configure the mining software
 
 This depends on the version you downloaded. All needed parameters are listed below:
 Depending on the software version, you might need to change `config web3provider` with the host and port.
@@ -46,7 +50,7 @@ Depending on the software version, you might need to change `config web3provider
 - (TOKEN) contract/address: **0xacbaf9715d3d92e2baee463c2189ed8df9ae6a36**
 - gasprice: 5 gwei
 
-### Start the mining software
+### Step 4: Start the mining software
 
 If you could not change the miner account/private key (depending of software), you might need to enter `accounts list` in the miner terminal. If no account exists, use `accounts new`. Fund the selected address via [https://faucet.ropsten.be/](https://faucet.ropsten.be/)
 
@@ -59,7 +63,7 @@ You should now be mining SCI59 tokens!
 Depending on the software, you will see a bunch of transactions appearing on the terminal, along with success messages. This means you successfuly minted a block.
 
 
-Become a masternode
+## Become a masternode
 ----
 
 In order to become a masternode, you must first hold tokens in your account. To see how many tokens you have, you can go to MyEtherwallet.com, view wallet info, and in the bottom left corner select 'Add custom token'.
