@@ -9,12 +9,12 @@ Please note that the following instructions apply to the **Ropsten testnet versi
 SCI59 Token details:
 
 - Contract address:   **0xacbaf9715d3d92e2baee463c2189ed8df9ae6a36**
-- Total supply:       21.000.000 tokens
+- Total supply:       21,000,000 tokens
 - Decimals:           8 Decimals
 
-Contract address: https://ropsten.etherscan.io/address/0xacbaf9715d3d92e2baee463c2189ed8df9ae6a36
+Contract address:  https://ropsten.etherscan.io/address/0xacbaf9715d3d92e2baee463c2189ed8df9ae6a36
 
-Token tracker: https://ropsten.etherscan.io/token/0xacbaf9715d3d92e2baee463c2189ed8df9ae6a36
+Token tracker:     https://ropsten.etherscan.io/token/0xacbaf9715d3d92e2baee463c2189ed8df9ae6a36
 
 ### Step 1: Prepare your Ropsten testnet account ###
 - Go to [**MyEtherWallet**](https://www.myetherwallet.com) (MEW).
@@ -55,31 +55,27 @@ If you could not change the miner account/private key (depending of software), y
 
 You should now be mining SCI59 tokens!
 
-
 ![Alt text](https://monosnap.com/image/cwV7mFtb5Wf167TuUDdnsK8RH9uyuQ.png)
-
 
 Depending on the software, you will see a bunch of transactions appearing on the terminal, along with success messages. This means you successfuly minted a block.
 
-
-## Become A Masternode
-----
-
+## Becoming A Masternode
+---
 In order to become a masternode, you must first hold tokens in your account. To see how many tokens you have, you can go to MyEtherwallet.com, view wallet info, and in the bottom left corner select 'Add custom token'.
 
 ![Alt text](https://monosnap.com/image/nld75jivvMKGCm0Sd7BFLyZcBxlQ4g.png)
 
-Input the SCI59 token details listed below and click 'Save'
+Input the SCI59 token details listed below and then click 'Save'
 
 - Token contract address: **0xacbaf9715d3d92e2baee463c2189ed8df9ae6a36**
-- Token Symbol: SCI59
-- Decimals: 8
+- Token Symbol:           SCI59
+- Decimals:               8
 
 You should now see your token balance in your account.
-**During testnet only,** 1 SCI59 token is enough to become a masternode.
+**NOTE** During testnet, 1 SCI59 token is enough to become a masternode.
 
 ### Step 1:
-On MyEtherwallet.com, select tabpage 'Contracts'. Make sure that you are on **Ropsten network**.
+On MyEtherwallet.com, select the 'Contracts' tab (making sure that you are on **Ropsten network**).
 
 ![Alt text](https://monosnap.com/image/5iyvm2yOCkqLcOYNJUQ4HlqYTtI1AF.png)
 
@@ -92,42 +88,33 @@ Copy paste the code below in the **ABI / JSON Interface**
 Click '**Access**' to interact with the contract. 
 
 ### Step 2
-
 From the dropdown box, select '**Approve**'. By calling the approve method, you will authorise the contract to spend SCI59 tokens on your behalf. This is necessary for the contract to accept deposits and issue withdrawels on your masternode collateral rewards. During testnet, approving 1 SCI59 token is enough.
 
-Note: The contract **will fail** if you did not approve it to accept your tokens using the **approve** call first.
+**NOTE:** The contract will fail if you did not approve it to accept your tokens using the approve call first.
 
 ![Alt text](https://monosnap.com/image/bkNUjGW5GrJ6kQCDbsYlJMpaKIr0rC.png)
 
-The **spender** must be set to the contract's own address, since this is the one that will use your tokens as collateral.
+The **spender** must be set to the contract's own address, since this is the one that will use your tokens as collateral: **0xacbaf9715d3d92e2baee463c2189ed8df9ae6a36**
 
-The **tokens** field must be set to the amount of tokens needed as collateral, during testnet, 1 SCI59. Since our contract uses 8 decimals, it's therefore **mandatory to append with 8x 0**. 1 Token equals **100000000**.
+The **tokens** field must be set to the amount of tokens needed as collateral which, during testnet, is 1 SCI59. Since our contract uses 8 decimals it is therefore **mandatory to append with 8 zeroes**. 1 Token equals **100000000**  (NO decimal points).
 
-Unlock your wallet and confirm and send the transaction. You will receive a confirmation that the transaction has been sent accross the network. You can click it to see that status, but generally your transaction will be confirmed within 2 minutes.
+Unlock your wallet and confirm and send the transaction. You will receive a confirmation that the transaction has been sent across the network. You can click it to see that status, but generally your transaction will be confirmed at around **2 minutes**.
 
 ### Step 3
+Select '*allowance*' in the dropdown list. Use your Ethereum address generated at the beginning of the guide as **tokenOwner** and use **0xacbaf9715d3d92e2baee463c2189ed8df9ae6a36** as the spender. The result should see **100000000** 
 
-In the dropdown box, select **isMasternode** and enter your ethereum address generated in step 1. If the transaction confirmed, it should return **true**. This means you are queud for the masternode payouts. 
+### Step 4
+Now select '*depositToken*' and deposit your token. (**100000000**) using the address **0xacbaf9715d3d92e2baee463c2189ed8df9ae6a36**
+
+### Step 5
+In the dropdown box, select **isMasternode** and enter the Ethereum address generated at the beginning of the guide. If the transaction has been confirmed, aa value of **true** should be returned and you are queued for the masternode payouts. If the value is **false** then wait a few more minutes and repeat this step.
 
 Every masternode receives a reward in turn. After some time, you will see that tokens have appeared in your account, depending on your position in the queue. During testnet, this should not take more than every 30 minutes.
 
-You are now registered as masternode, and will continue to receive rewards until you decide to withdraw your collateral amount of tokens deposited.
-
-
-
-
+**You are now registered as masternode, and will continue to receive rewards until you decide to withdraw your collateral amount of tokens deposited.**
 
 Stop as masternode
-----
+---
 If for whatever reason you want to stop being a masternode on SCI59, you can do so by repeating the steps in section **Become a masternode**, only replacing the `depositToken` in the dropdown box with the `withdrawToken` function.
 
-This will send your tokens back, and removes you from the masternode reward list. Please note that you can only enter as masternode again on the next round.
-
-
-
-
-
-
-
-
-
+This will send your tokens back and remove you from the masternode reward list. Please note that you can only enter as masternode again on the next round.
